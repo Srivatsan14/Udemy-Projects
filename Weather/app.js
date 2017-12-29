@@ -22,11 +22,14 @@ $(document).ready(function(){
     html += '<ul ><li>'+weather.city+', '+weather.region+'</li>';
     html += '<li >'+weather.currently+'</li>';
     html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';  
-    update ='<h6>Last Updated :' +weather.updated+'</h6>';
+    update ='<h6>Last Updated : ' +weather.updated+'</h6>';
    
     $("#up").html(update);
     $("#weather").html(html);  
-    }
+    },
+    error: function(error) {
+        $("#weather").html('<h4>'+error+'</h4>');
+      }
     });
     
   }
