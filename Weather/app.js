@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+    
   $('#btn').click(function() {
     
     const place =  $('#place').val();
@@ -21,7 +22,9 @@ $(document).ready(function(){
     html += '<ul ><li>'+weather.city+', '+weather.region+'</li>';
     html += '<li >'+weather.currently+'</li>';
     html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';  
-    
+    update ='<h6>Last Updated :' +weather.updated+'</h6>';
+   
+    $("#up").html(update);
     $("#weather").html(html);  
     }
     });
