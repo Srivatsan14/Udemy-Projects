@@ -3,7 +3,9 @@ $(document).ready(function(){
   $('#btn').click(function() {
     
     const place =  $('#place').val();
+    
     loadWeather(place,''); 
+    
   });
 });
   function loadWeather(location, woeid)  {
