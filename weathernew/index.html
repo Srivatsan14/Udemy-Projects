@@ -6,26 +6,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Materialize Form Modal</title>
+  <title>Weather Info</title>
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.css'>
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.css'>
 
 
-
+<style>
+  
+  #title{
+    font-size: 55px !important ;
+  }
+</style>
 
 </head>
 
 <body>
-
-
-  <!-- Modal Trigger -->
-  <div class=" container">
+  <div class=" container center ">
     <div class=" row">
-      <div class=" col s12  ">
-        <div class=" card blue ">
+      <div class=" col s12 ">
+        <div class=" card blue lighten-1 hoverable">
           <div class=" card-content ">
-            <h1 class=" card-title">Weather Info</h1>
+            <h1 class=" card-title" id="title">Weather Info</h1>
             <h2 id="w-location"></h2>
             <h3 id="w-desc"></h3>
             <h3 id="w-string"></h3>
@@ -39,8 +41,8 @@
               <li class=" collection-item" id="w-wind"></li>
 
             </ul>
-            <hr>
-            <button class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</button>
+            <hr >
+            <button class="waves-effect waves-light btn modal-trigger blue darken-3" data-target="modal1">Change Location</button>
 
           </div>
 
@@ -52,33 +54,22 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <h4>Add an Image</h4>
+        <h4 class=" light-blue-text">Choose Location</h4>
+        <form id="w-form">
+          <div class="input-field col s6">
+            <input id="city" type="text" >
+            <label for="city">City</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="state" type="text">
+            <label for="state">State</label>
+          </div>
+        </form>
 
-        <div class="row">
-          <form class="col s12">
-            <div class="row modal-form-row">
-              <div class="input-field col s12">
-                <input id="image_url" type="text" class="validate">
-                <label for="image_url">Image URL</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="image_title" type="text" class="validate">
-                <label for="image_title">Title</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="image_description" type="text" class="materialize-textarea validate"></textarea>
-                <label for="image_description">Description</label>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+        
       <div class="modal-footer">
-        <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+        <a class=" model-action modal-close waves-effect btn-flat waves-red">Close</a>
+        <a class=" modal-action waves-effect waves-green btn-flat" id="w-change-btn">Save Changes</a>
       </div>
     </div>
   </div>
